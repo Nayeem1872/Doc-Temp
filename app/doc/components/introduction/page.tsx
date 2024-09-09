@@ -24,7 +24,7 @@ const Intro = () => {
         time with configuration.
       </p>
       <p className="text-gray-400">
-        Whether you're an individual developer or part of a larger team,
+        Whether you are an individual developer or part of a larger team,
         Next.js can help you build interactive, dynamic, and fast React
         applications.
       </p>

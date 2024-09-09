@@ -1,17 +1,26 @@
 "use client";
 import { BorderBeam } from "@/components/magicui/border-beam";
+import SparklesText from "@/components/magicui/sparkles-text";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
 
 export const HeroSection = () => {
+
+  const router = useRouter()
+
+const redirect = ()=>{
+ router.push("/doc")
+}
+
   const { theme } = useTheme();
   return (
     <section className="container w-full">
@@ -34,19 +43,18 @@ export const HeroSection = () => {
               solution with
               <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
 
-                nIAM
+               nIAM
               </span>
 
             </h1>
           </div>
 
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            {`We're more than just a tool, we're a community of passionate
-            creators. Get access to exclusive resources, tutorials, and support.`}
+          Everything you need to make your life easy to manage employee and partner access to business system and applications
           </p>
 
           <div className="space-y-4 md:space-y-0 md:space-x-4">
-            <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
+            <Button className="w-5/6 md:w-1/4 font-bold group/arrow" onClick={redirect}>
               Get Started
               <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
             </Button>

@@ -14,7 +14,7 @@ const Circle = forwardRef<
       ref={ref}
       className={cn(
         "z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
-        className,
+        className
       )}
     >
       {children}
@@ -36,94 +36,95 @@ export function ServicesSection() {
 
   return (
     <section id="services" className="container py-24 sm:py-32">
-    <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-      Services
-    </h2>
+      <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
+        Services
+      </h2>
 
-    <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-      Grow Your Business
-    </h2>
-    <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-      From marketing and sales to operations and strategy, we have the
-      expertise to help you achieve your goals.
-    </h3>
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-    <div
-      className="relative flex h-[500px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-10 md:shadow-xl"
-      ref={containerRef}
-    >
-      <div className="flex size-full flex-col max-w-lg max-h-[200px] items-stretch justify-between gap-10">
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div1Ref}>
-            <Icons.googleDrive />
-          </Circle>
-          <Circle ref={div5Ref}>
-            <Icons.googleDocs />
-          </Circle>
+      <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
+        Grow Your Business
+      </h2>
+      <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
+        From marketing and sales to operations and strategy, we have the
+        expertise to help you achieve your goals.
+      </h3>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      <div
+        className="relative flex h-[500px] w-full items-center justify-center overflow-hidden rounded-lg bg-background p-10"
+        style={{ border: "2px solid #00a696" }}
+        ref={containerRef}
+      >
+        <div className="flex size-full flex-col max-w-lg max-h-[200px] items-stretch justify-between gap-10">
+          <div className="flex flex-row items-center justify-between">
+            <Circle ref={div1Ref}>
+              <Icons.googleDrive />
+            </Circle>
+            <Circle ref={div5Ref}>
+              <Icons.googleDocs />
+            </Circle>
+          </div>
+          <div className="flex flex-row items-center justify-between">
+            <Circle ref={div2Ref}>
+              <Icons.notion />
+            </Circle>
+            <Circle ref={div4Ref} className="size-16">
+              <Icons.openai />
+            </Circle>
+            <Circle ref={div6Ref}>
+              <Icons.zapier />
+            </Circle>
+          </div>
+          <div className="flex flex-row items-center justify-between">
+            <Circle ref={div3Ref}>
+              <Icons.whatsapp />
+            </Circle>
+            <Circle ref={div7Ref}>
+              <Icons.messenger />
+            </Circle>
+          </div>
         </div>
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div2Ref}>
-            <Icons.notion />
-          </Circle>
-          <Circle ref={div4Ref} className="size-16">
-            <Icons.openai />
-          </Circle>
-          <Circle ref={div6Ref}>
-            <Icons.zapier />
-          </Circle>
-        </div>
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div3Ref}>
-            <Icons.whatsapp />
-          </Circle>
-          <Circle ref={div7Ref}>
-            <Icons.messenger />
-          </Circle>
-        </div>
+
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div1Ref}
+          toRef={div4Ref}
+          curvature={-75}
+          endYOffset={-10}
+        />
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div2Ref}
+          toRef={div4Ref}
+        />
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div3Ref}
+          toRef={div4Ref}
+          curvature={75}
+          endYOffset={10}
+        />
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div5Ref}
+          toRef={div4Ref}
+          curvature={-75}
+          endYOffset={-10}
+          reverse
+        />
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div6Ref}
+          toRef={div4Ref}
+          reverse
+        />
+        <AnimatedBeam
+          containerRef={containerRef}
+          fromRef={div7Ref}
+          toRef={div4Ref}
+          curvature={75}
+          endYOffset={10}
+          reverse
+        />
       </div>
-
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div1Ref}
-        toRef={div4Ref}
-        curvature={-75}
-        endYOffset={-10}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div2Ref}
-        toRef={div4Ref}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div3Ref}
-        toRef={div4Ref}
-        curvature={75}
-        endYOffset={10}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div5Ref}
-        toRef={div4Ref}
-        curvature={-75}
-        endYOffset={-10}
-        reverse
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div6Ref}
-        toRef={div4Ref}
-        reverse
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div7Ref}
-        toRef={div4Ref}
-        curvature={75}
-        endYOffset={10}
-        reverse
-      />
-    </div>
     </section>
   );
 }
