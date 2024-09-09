@@ -1,43 +1,62 @@
 "use client";
-import React from "react";
-import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import * as Collapsible from "@radix-ui/react-collapsible";
-import { ChevronDown } from "lucide-react";
+import React, { ReactNode } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children: ReactNode;  
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const router = useRouter();
 
   return (
     <div style={{ display: "flex", marginTop: "100px", marginLeft: "200px", marginRight: "200px" }}>
-      <NavigationMenu.Root style={{ padding: "1rem", width: "250px" }}>
-        <NavigationMenu.List>
-          <Collapsible.Root>
-            <Collapsible.Trigger asChild>
-              <NavigationMenu.Item style={{ cursor: "pointer", paddingBottom: "1rem" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", cursor: "pointer" }}>
-                  Get Started
-                  <ChevronDown />
-                </div>
-              </NavigationMenu.Item>
-            </Collapsible.Trigger>
-            <Collapsible.Content>
-              <NavigationMenu.Item
-                style={{ paddingLeft: "1rem", paddingBottom: "1rem", cursor: "pointer" }}
-                onClick={() => router.push("/doc/components/introduction")}
-              >
-                Introduction
-              </NavigationMenu.Item>
-              <NavigationMenu.Item style={{ paddingLeft: "1rem", paddingBottom: "1rem", cursor: "pointer" }}>
-                <a href="#screenshots">Screenshots</a>
-              </NavigationMenu.Item>
-              {/* Other Navigation Items */}
-            </Collapsible.Content>
-          </Collapsible.Root>
-
-          {/* Other Collapsible Items for Knowledge Base, Resource, API */}
-        </NavigationMenu.List>
-      </NavigationMenu.Root>
+     <aside className="w-64 p-4 border-r border-gray-700">
+          <nav className="space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold">Getting Started</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/doc" className="text-gray-400 hover:text-white" prefetch={false}>
+                    Installation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white" prefetch={false}>
+                    Project Structure
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          
+            <div>
+              <h3 className="text-lg font-semibold">API Reference</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white" prefetch={false}>
+                    Components
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white" prefetch={false}>
+                    File Conventions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white" prefetch={false}>
+                    Functions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white" prefetch={false}>
+                    next.config.js Options
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </aside>
 
       <div style={{ padding: "1rem", flexGrow: 1, overflowY: "auto" }}>
         {children}

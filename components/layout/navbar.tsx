@@ -59,11 +59,13 @@ const featureList: FeatureProps[] = [
   },
   {
     title: "Build Trust",
-    description: "Leverages social proof elements to establish trust and credibility.",
+    description:
+      "Leverages social proof elements to establish trust and credibility.",
   },
   {
     title: "Capture Leads",
-    description: "Make your lead capture form visually appealing and strategically.",
+    description:
+      "Make your lead capture form visually appealing and strategically.",
   },
 ];
 
@@ -71,12 +73,16 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card">
+    <header className="shadow-lg bg-opacity-30 backdrop-blur-sm bg-white/30 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky  z-40 rounded-2xl flex justify-between items-center p-4">
       <Link href="/" className="font-bold text-lg flex items-center">
-        <img src="/logo1.png" className="w-9 h-9 mr-2 text-white" alt="nIAM Logo" />
+        <img
+          src="/logo1.png"
+          className="w-9 h-9 mr-2 text-white"
+          alt="nIAM Logo"
+        />
         nIAM
       </Link>
-      {/* <!-- Mobile --> */}
+      {/* Mobile Menu */}
       <div className="flex items-center lg:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
@@ -128,23 +134,15 @@ export const Navbar = () => {
         </Sheet>
       </div>
 
-      {/* <!-- Desktop --> */}
+      {/* Desktop Menu */}
       <NavigationMenu className="hidden lg:block mx-auto">
         <NavigationMenuList>
-          <NavigationMenuItem>
+          {/* <NavigationMenuItem>
             <NavigationMenuTrigger className="bg-card text-base">
               Features
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="grid w-[600px] grid-cols-2 gap-5 p-4">
-                {/* Add a valid src or remove this Image component */}
-                {/* <Image
-                  src="/valid-image-source.jpg"
-                  alt="RadixLogo"
-                  className="h-full w-full rounded-md object-cover"
-                  width={600}
-                  height={600}
-                /> */}
                 <ul className="flex flex-col gap-2">
                   {featureList.map(({ title, description }) => (
                     <li
@@ -162,7 +160,7 @@ export const Navbar = () => {
                 </ul>
               </div>
             </NavigationMenuContent>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
 
           <NavigationMenuItem>
             {routeList.map(({ href, label }) => (
@@ -176,7 +174,7 @@ export const Navbar = () => {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="hidden lg:flex">
+      <div className="hidden lg:flex items-center space-x-4">
         <ToggleTheme />
 
         <Button asChild size="sm" variant="ghost" aria-label="View on Linkedin">
