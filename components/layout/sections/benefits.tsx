@@ -1,37 +1,48 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Icon } from "@/components/ui/icon";
-import { icons } from "lucide-react";
+import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+import {
+  BellIcon,
+  CalendarIcon,
+  GlobeIcon,
+  LightningBoltIcon,
+} from "@radix-ui/react-icons";
 
-interface BenefitsProps {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-const benefitList: BenefitsProps[] = [
+const features = [
   {
-    icon: "Blocks",
-    title: "Build Brand Trust",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+    Icon: LightningBoltIcon,
+    name: "Light Weight",
+    description: "Search through all your files in one place.",
+    href: "/",
+    cta: "Learn more",
+    background: <img className="absolute -right-20 -top-20 opacity-60" />,
+    className: "col-span-1 row-span-1", // Set to span one column and row
   },
   {
-    icon: "LineChart",
-    title: "More Leads",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, natus consectetur.",
+    Icon: GlobeIcon,
+    name: "Multi Language",
+    description: "Supports 100+ languages and counting.",
+    href: "/",
+    cta: "Learn more",
+    background: <img className="absolute -right-20 -top-20 opacity-60" />,
+    className: "col-span-1 row-span-1", // Set to span one column and row
   },
   {
-    icon: "Wallet",
-    title: "Higher Conversions",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur. A odio velit cum aliquam",
+    Icon: CalendarIcon,
+    name: "Calendar",
+    description: "Use the calendar to filter your files by date.",
+    href: "/",
+    cta: "Learn more",
+    background: <img className="absolute -right-20 -top-20 opacity-60" />,
+    className: "col-span-1 row-span-1", // Set to span one column and row
   },
   {
-    icon: "Sparkle",
-    title: "Test Marketing Ideas",
+    Icon: BellIcon,
+    name: "Notifications",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+      "Get notified when someone shares a file or mentions you in a comment.",
+    href: "/",
+    cta: "Learn more",
+    background: <img className="absolute -right-20 -top-20 opacity-60" />,
+    className: "col-span-1 row-span-1", // Set to span one column and row
   },
 ];
 
@@ -52,34 +63,16 @@ export const BenefitsSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-4 w-full">
-          {benefitList.map(({ icon, title, description }, index) => (
-            <Card
-              key={title}
-              className="bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number"
-            >
-              <CardHeader>
-                <div className="flex justify-between">
-                  <Icon
-                    name={icon as keyof typeof icons}
-                    size={32}
-                    color="hsl(var(--primary))"
-                    className="mb-6 text-primary"
-                  />
-                  <span className="text-5xl text-muted-foreground/15 font-medium transition-all delay-75 group-hover/number:text-muted-foreground/30">
-                    0{index + 1}
-                  </span>
-                </div>
+        {/* Grid Layout */}
+        <BentoGrid className="grid grid-cols-2 gap-6 hover:text-[#6ed8c8]">
+          {/* Row 1 */}
+          <BentoCard key={features[0].name} {...features[0]} />
+          <BentoCard key={features[1].name} {...features[1]} />
 
-                <CardTitle>{title}</CardTitle>
-              </CardHeader>
-
-              <CardContent className="text-muted-foreground">
-                {description}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+          {/* Row 2 */}
+          <BentoCard key={features[2].name} {...features[2]}  />
+          <BentoCard key={features[3].name} {...features[3]} />
+        </BentoGrid>
       </div>
     </section>
   );

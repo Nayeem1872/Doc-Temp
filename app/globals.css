@@ -68,3 +68,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Tailwind CSS approach */
+.group:hover .card-name,
+.group:hover .card-description,
+.group:hover .card-cta {
+  color: #54b5a7; /* Your desired hover color */
+}
