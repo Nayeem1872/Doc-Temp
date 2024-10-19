@@ -1,8 +1,7 @@
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import BlurFade from "@/components/ui/blur-fade";
-import { FaEnvelope, FaBell, FaKey, FaClock } from "react-icons/fa";
 import React, { useState } from "react";
-import { EmailProviderSettingsData, orgRole } from "./settingsData";
+import {  orgRole } from "./settingsData";
 
 const OrgAccess = () => {
   const [open, setOpen] = useState(false);

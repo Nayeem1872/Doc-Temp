@@ -28,11 +28,10 @@ const Settings = () => {
 
         <h2 className="text-3xl font-bold mb-6">Org Info Edit</h2>
         <p className="text-gray-400 mb-8">
-          The Org Info Edit feature helps you set up and manage key organization
+          The Org Info Edit feature helps to set up and manage key organization
           settings, including domain management and roles.
         </p>
         <div className="flex items-start">
-          {/* Left: List with text */}
           <ul className="list-none space-y-6 text-gray-500 flex-1">
           {organizationSettings.map((setting, index) => (
             <li className="flex items-center" key={index}>
@@ -45,7 +44,6 @@ const Settings = () => {
           ))}
         </ul>
 
-          {/* Right: Image */}
           <div className="flex-shrink-0 ml-6">
             <BlurFade delay={0.25} inView>
               <Dialog open={open} onOpenChange={setOpen}>

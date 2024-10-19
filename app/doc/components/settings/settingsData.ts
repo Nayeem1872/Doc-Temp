@@ -47,7 +47,7 @@ export const organizationSettings = [
         icon: FaCogs,
         title: "Automating Processes",
         description:
-          'Enabling "Automated Provisioning" helps automate provisioning of resources (e.g., accounts, permissions), making ongoing administration smoother.',
+          'Enabling "Automated Provisioning" helps automate provisioning of resources (e.g.system, host, permissions), making ongoing administration smoother.',
         color: "text-cyan-600",
       },
   ];

@@ -1,6 +1,5 @@
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import BlurFade from "@/components/ui/blur-fade";
-import { FaEnvelope, FaBell, FaKey, FaClock } from "react-icons/fa";
 import React, { useState } from "react";
 import { EmailProviderSettingsData } from "./settingsData";
 
@@ -11,7 +10,7 @@ const EmailProviderSettings = () => {
       <h2 className="text-3xl font-bold mb-6">Email Provider Settings</h2>
       <p className="text-gray-400 mb-8">
         The Email Provider Settings allow you to configure and automate your
-        organization's email notifications.
+        organization email notifications.
       </p>
       <div className="flex items-start">
 
